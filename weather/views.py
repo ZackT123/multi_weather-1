@@ -1,4 +1,4 @@
-]from django.shortcuts import render
+from django.shortcuts import render
 from django.views import View
 import requests
 from bs4 import BeautifulSoup
