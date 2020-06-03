@@ -19,7 +19,6 @@ class Main(View):
         holding_data.pop(0)
         holding_data.pop()
         holding_data = str(holding_data).replace("'", '').replace('[', '').replace(']', '').replace(',', '').split()
-        # holding_data = ''.join([i for i in str(holding_data) if "'[]," not in i]).split()
 
         return {'day_temperature': holding_data[3], 'night_temperature': holding_data[9], 'weather': holding_data[12]}
 
@@ -29,9 +28,8 @@ class Main(View):
 
     # Returns template response with according data as context
     def get(self, request):
-        '''
         context = {
             'met_office': self.met_office(),
         }
-        '''
-        return render(request, 'weather_main/main.html', {'met_office': self.met_office()})
+        
+        return render(request, 'weather_main/main.html', context)
