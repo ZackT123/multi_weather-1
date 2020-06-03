@@ -29,9 +29,7 @@ class Main(View):
 
     # Returns template response with according data as context
     def get(self, request):
-        '''
         context = {
             'met_office': self.met_office(),
         }
-        '''
         return render(request, 'weather_main/main.html', {'met_office': self.met_office()})
